@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Config
+clusters:
+  - name: CLUSTER_NAME
+    cluster:
+      server: CLUSTER_URL
+      certificate-authority-data: CLUSTER_CA
+current-context: CONTEXT_NAME
+contexts:
+  - name: CONTEXT_NAME
+    context:
+      cluster: CLUSTER_NAME
+      namespace: NAMESPACE_NAME
+      user: SERVICE_ACCOUNT_NAME
+users:
+  - name: SERVICE_ACCOUNT_NAME
+    user:
+      token: SERVICE_TOKEN
